@@ -1,0 +1,373 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: 0; 
+    padding: 0; 
+    margin: 0; 
+    border: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(50,50,50);
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+/*Start block*/
+
+#start-block {
+    min-height: 100vh;
+    background-image: url("./images/coach.jpg");
+    background-size: cover;
+    background-position: top;
+    color: white;
+    display: flex;
+    position: relative;
+}
+
+/* Добавление затемняющего слоя */
+#start-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Стили для текста и содержимого внутри блока */
+#start-block > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* #start-block{
+    min-height: 100vh;
+    background-image:url("./images/coach.jpg");
+    background-size:cover;
+    background-position:top;
+    color: white;
+    display: flex;
+} */
+
+/*******************************/
+
+/*Coach*/
+#coach{
+    min-height: 60vh;
+    background-color: rgb(255, 255, 255);
+}
+
+#coach-img{
+    background-image:url("./images/coach_2.jpg");
+    background-size:cover;
+    background-position:top;
+    min-height: 70vh;
+    border-radius: 2%;
+}
+
+#about-coach{
+    text-align: justify;
+}
+/*******************************/
+
+/*Swiper reviews*/
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: justify;
+    background: rgb(255, 255, 255);
+    min-height: 50vh;
+    padding: 20px;
+    border-radius: 5%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении */
+.swiper-slide:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-button-next::after{
+    color: rgb(39, 39, 39);
+}
+.swiper-button-prev::after{
+    color: rgb(39, 39, 39);
+}
+#reviews{
+    min-height: 70vh;
+    width: 100%;
+    background-color: rgb(255,255,255);
+    text-align: justify;
+}
+
+@media (max-width: 639px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+}
+
+/***************************************/
+
+/*Divider*/
+.divider {
+    height: 15vh;
+    background-color: rgb(39, 38, 38);
+    position: relative;
+    overflow: hidden;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 50% 50%, 
+        rgba(255, 255, 255, 0.1) 10%, 
+        rgba(39, 38, 38, 1) 11%
+    );
+    background-size: 50px 50px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.divider-light {
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+}
+
+
+/***************************************/
+
+/*Courses*/
+#courses{
+    min-height: 50vh;
+    background-color: rgb(23, 23, 23);
+    color:rgb(255, 255, 255);
+}
+
+.courses-name{
+    font-size: 22px;
+}
+
+#course-1 {
+    min-height: 60vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
+        url("./images/course_img_1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+#course-2 {
+    min-height: 60vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
+        url("./images/course_img_2.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+#course-3 {
+    min-height: 60vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
+        url("./images/course_img_3.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+#course-4 {
+    min-height: 60vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
+        url("./images/course_img_4.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    text-align: justify;
+}
+
+/**************************************/
+
+/*Contacts*/
+.links {
+    position: relative;
+    color: rgb(236, 235, 235);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(236, 235, 235);
+    transition: width 0.3s ease;
+}
+
+.links:hover {
+    color: rgb(209, 209, 209);
+}
+
+.links:hover::after {
+    width: 100%;
+}
+
+.icon-link {
+    color: rgb(236, 235, 235);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: rgb(0, 212, 255);
+}
+
+
+#contacts{
+    min-height: 50vh;
+    background-color: rgb(23, 23, 23);
+    color: rgb(255, 255, 255);
+}
+
+.line-contacts{
+    height: 4px;
+    border-radius: 5px;
+    background-color: rgb(165, 146, 86);
+}
+
+/**************************************/
+
+.pb-xs-3{
+    padding-bottom: 1rem;
+}
+
+.pb-xs-5{
+    padding-bottom: 3rem;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none !important;
+}
+
+.form-control:focus{
+    outline: none;
+    box-shadow: none !important;
+}
+
+
+/*Google fonts*/
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+
+/***********************************/
