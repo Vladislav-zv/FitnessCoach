@@ -2,6 +2,7 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
+    speed: 500,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -35,23 +36,30 @@ var swiper = new Swiper(".mySwiper", {
   });
 
 
+function clearForm()
+{
+  document.getElementById("user_name").value = "";
+  document.getElementById("user_email").value = "";
+  document.getElementById("message").value = "";
+}
+
 const btn = document.getElementById('btnSubmit');
 
 document.getElementById('contact-form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Sending...';
+   btn.value = 'Отправка...';
 
    const serviceID = 'service_im88pwq';
    const templateID = 'template_uhek66n';
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
+      btn.value = 'Отправить';
+      clearForm();
     }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
+      btn.value = 'Отправить';
+      clearForm();
     });
 });
