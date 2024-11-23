@@ -9,14 +9,12 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: rgb(255, 255, 255);
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     line-height: 1.6;
     color: rgb(50,50,50);
@@ -102,6 +100,8 @@ body {
     border-radius: 5%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
 }
 
 /* Эффект при наведении */
@@ -132,9 +132,10 @@ body {
 /***************************************/
 
 /*Divider*/
+/* Divider */
 .divider {
     height: 15vh;
-    background-color: rgb(39, 38, 38);
+    background-color: rgb(15, 20, 42); /* Основной фиолетовый фон */
     position: relative;
     overflow: hidden;
 }
@@ -148,13 +149,27 @@ body {
     height: 200%;
     background: radial-gradient(
         circle at 50% 50%, 
-        rgba(255, 255, 255, 0.1) 10%, 
-        rgba(39, 38, 38, 1) 11%
+        rgba(236, 235, 235, 0.2) 10%, /* Светло-серые круги */
+        rgba(15, 20, 42, 1) 11%, /* Сливаются с основным фоном */
+        rgba(20, 30, 52, 0.1) 13% /* Добавление тёмного акцента */
     );
-    background-size: 50px 50px;
+    background-size: 70px 70px; /* Расстояние между кругами */
     transform: rotate(45deg);
     z-index: 1;
 }
+
+/* Опционально: добавление тени для эстетики */
+.divider::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, rgba(236, 235, 235, 0.2), rgba(255, 255, 255, 0.4), rgba(236, 235, 235, 0.2));
+    opacity: 0.5;
+}
+
 
 .divider-light {
     height: 10vh;
@@ -167,7 +182,11 @@ body {
 /*Courses*/
 #courses{
     min-height: 50vh;
-    background-color: rgb(23, 23, 23);
+    background: linear-gradient(
+        135deg, 
+        rgb(15, 20, 42) 30%, 
+        rgb(33, 37, 64) 70%
+    );
     color:rgb(255, 255, 255);
 }
 
@@ -175,52 +194,62 @@ body {
     font-size: 22px;
 }
 
+.course-content{
+    height: 100%;
+    min-height: 60vh;
+    background: linear-gradient(135deg, rgb(15, 20, 42) 30%, rgb(25, 30, 55) 70%);
+}
+
 #course-1 {
     min-height: 60vh;
     width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
-        url("./images/course_img_1.jpg");
+    color: rgb(255, 255, 255);
+    text-align: justify;
+}
+#course-1-img{
+    min-height: 60vh;
+    background-image:url("./images/course_img_1.jpg");
     background-size: cover;
     background-position: center;
-    color: rgb(0, 0, 0);
-    text-align: justify;
 }
 
 #course-2 {
     min-height: 60vh;
     width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
-        url("./images/course_img_2.jpg");
+    color: rgb(255, 255, 255);
+    text-align: justify;
+}
+#course-2-img{
+    min-height: 60vh;
+    background-image:url("./images/course_img_2.jpg");
     background-size: cover;
     background-position: center;
-    color: rgb(0, 0, 0);
-    text-align: justify;
 }
 
 #course-3 {
     min-height: 60vh;
     width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
-        url("./images/course_img_3.jpg");
+    color: rgb(255, 255, 255);
+    text-align: justify;
+}
+#course-3-img{
+    min-height: 60vh;
+    background-image:url("./images/course_img_3.jpg");
     background-size: cover;
     background-position: center;
-    color: rgb(0, 0, 0);
-    text-align: justify;
 }
 
 #course-4 {
     min-height: 60vh;
     width: 100%;
-    background-image: 
-        linear-gradient(to right, rgba(15, 20, 42, 0.9), rgba(15, 20, 42, 0.5)),
-        url("./images/course_img_4.jpg");
+    color: rgb(255, 255, 255);
+    text-align: justify;
+}
+#course-4-img{
+    min-height: 60vh;
+    background-image:url("./images/course_img_4.jpg");
     background-size: cover;
     background-position: center;
-    color: rgb(0, 0, 0);
-    text-align: justify;
 }
 
 /**************************************/
@@ -265,7 +294,6 @@ body {
 
 #contacts{
     min-height: 50vh;
-    background-color: rgb(23, 23, 23);
     color: rgb(255, 255, 255);
 }
 
@@ -273,6 +301,15 @@ body {
     height: 4px;
     border-radius: 5px;
     background-color: rgb(165, 146, 86);
+}
+
+#under-contacts{
+    color: rgb(255, 255, 255); 
+    min-height: 5vh;
+}
+
+footer{
+    background: linear-gradient(135deg, rgb(15, 20, 42) 30%, rgb(25, 30, 55) 70%);
 }
 
 /**************************************/
@@ -293,6 +330,41 @@ body {
 .form-control:focus{
     outline: none;
     box-shadow: none !important;
+}
+
+.card {
+    padding: 20px;
+    background: linear-gradient(135deg, rgb(15, 20, 42) 30%, rgb(25, 30, 55) 70%) !important;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) 1;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(
+        circle, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        rgba(0, 0, 0, 0) 70%
+    );
+    transform: translate(-50%, -50%);
+    z-index: 0;
 }
 
 
@@ -368,6 +440,5 @@ body {
     font-weight: 900;
     font-style: italic;
   }
-  
 
 /***********************************/
