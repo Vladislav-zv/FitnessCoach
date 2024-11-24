@@ -10,7 +10,6 @@
 
 body {
     line-height: 1.6;
-    color: #333;
     background-color: rgb(255, 255, 255);
     min-height: 100vh;
     height: 100%;
@@ -25,7 +24,6 @@ body {
     margin-right: 0 !important;
 }
 /*Start block*/
-
 #start-block {
     min-height: 100vh;
     background-image: url("./images/coach.jpg");
@@ -34,9 +32,9 @@ body {
     color: white;
     display: flex;
     position: relative;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Добавление затемняющего слоя */
 #start-block::before {
     content: "";
     position: absolute;
@@ -44,25 +42,89 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
     z-index: 1;
 }
 
-/* Стили для текста и содержимого внутри блока */
 #start-block > * {
     position: relative;
     z-index: 2;
 }
 
-
-/* #start-block{
-    min-height: 100vh;
-    background-image:url("./images/coach.jpg");
-    background-size:cover;
-    background-position:top;
+#start-block h1 {
     color: white;
-    display: flex;
-} */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease;
+}
+
+#start-block p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.25rem;
+    animation: fadeInUp 1s ease;
+}
+
+#start-block .btn-primary {
+    background-color: rgb(15, 20, 42);
+    border: none;
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#start-block .btn-primary:hover {
+    background-color: rgb(25, 30, 55);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 366px) {
+    #start-block h1 {
+        font-size: 2rem;
+    }
+    #start-block p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        animation: fadeInUp 1s ease;
+    }
+}
+
+@media (max-width: 280px) {
+    #start-block h1 {
+        font-size: 1.5rem;
+    }
+    #start-block p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.75rem;
+        animation: fadeInUp 1s ease;
+    }
+}
+
+/* Анимация */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /*******************************/
 
@@ -201,52 +263,52 @@ body {
 }
 
 #course-1 {
-    min-height: 60vh;
+    min-height: 40vh;
     width: 100%;
     color: rgb(255, 255, 255);
     text-align: justify;
 }
 #course-1-img{
-    min-height: 60vh;
+    min-height: 40vh;
     background-image:url("./images/course_img_1.jpg");
     background-size: cover;
     background-position: center;
 }
 
 #course-2 {
-    min-height: 60vh;
+    min-height: 40vh;
     width: 100%;
     color: rgb(255, 255, 255);
     text-align: justify;
 }
 #course-2-img{
-    min-height: 60vh;
+    min-height: 40vh;
     background-image:url("./images/course_img_2.jpg");
     background-size: cover;
     background-position: center;
 }
 
 #course-3 {
-    min-height: 60vh;
+    min-height: 40vh;
     width: 100%;
     color: rgb(255, 255, 255);
     text-align: justify;
 }
 #course-3-img{
-    min-height: 60vh;
+    min-height: 40vh;
     background-image:url("./images/course_img_3.jpg");
     background-size: cover;
     background-position: center;
 }
 
 #course-4 {
-    min-height: 60vh;
+    min-height: 40vh;
     width: 100%;
     color: rgb(255, 255, 255);
     text-align: justify;
 }
 #course-4-img{
-    min-height: 60vh;
+    min-height: 40vh;
     background-image:url("./images/course_img_4.jpg");
     background-size: cover;
     background-position: center;
