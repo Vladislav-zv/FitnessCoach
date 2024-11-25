@@ -36,6 +36,23 @@ var swiper = new Swiper(".mySwiper", {
   });
 
 
+function showCustomAlert(message, type = "success", duration = 4000) {
+    const alertContainer = document.getElementById("custom-alert-container");
+
+    const alert = document.createElement("div");
+    alert.className = `custom-alert ${type}`;
+    alert.innerHTML = `
+        <span>${message}</span>
+        <button class="btn-close" onclick="this.parentElement.remove()" aria-label="Close" style="border: none; background: transparent; color: white; font-size: 20px; cursor: pointer;">&times;</button>
+    `;
+
+    alertContainer.appendChild(alert);
+
+    setTimeout(() => {
+        alert.remove();
+    }, duration);
+}
+
 function clearForm()
 {
   document.getElementById("user_name").value = "";
@@ -58,8 +75,10 @@ document.getElementById('contact-form')
     .then(() => {
       btn.value = 'Отправить';
       clearForm();
+      showCustomAlert(`Сообщение успешно отправлено!`, "success");
     }, (err) => {
       btn.value = 'Отправить';
       clearForm();
+      showCustomAlert(`Ошибка при отправке сообщения. Попробуйте снова`, "error");
     });
 });
