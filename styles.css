@@ -255,10 +255,11 @@ body {
 
 /* Divider */
 .divider {
-    height: 15vh;
-    background-color: rgb(15, 20, 42); /* Основной фиолетовый фон */
+    height: 10vh;
+    background: linear-gradient(135deg, rgba(20, 24, 48, 1) 0%, rgba(45, 50, 70, 1) 50%, rgba(15, 20, 42, 1) 100%);
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .divider::before {
@@ -270,12 +271,13 @@ body {
     height: 200%;
     background: radial-gradient(
         circle at 50% 50%, 
-        rgba(236, 235, 235, 0.2) 10%,
-        rgba(15, 20, 42, 1) 11%,
-        rgba(20, 30, 52, 0.1) 13%
+        rgba(70, 80, 120, 0.15) 10%, 
+        rgba(30, 35, 60, 0.5) 50%, 
+        rgba(15, 20, 42, 1) 100%
     );
-    background-size: 70px 70px;
+    background-size: 80px 80px;
     transform: rotate(45deg);
+    opacity: 0.7;
     z-index: 1;
 }
 
@@ -285,10 +287,12 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, rgba(236, 235, 235, 0.2), rgba(255, 255, 255, 0.4), rgba(236, 235, 235, 0.2));
-    opacity: 0.5;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    opacity: 0.6;
+    z-index: 2;
 }
+
 
 
 .divider-light {
