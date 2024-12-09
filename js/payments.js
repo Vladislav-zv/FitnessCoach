@@ -1,3 +1,38 @@
+if (window.location.search.includes("status=success1m")) {
+    showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    sendEmail('course1','Ускоренная растяжка', `10`, `Monobank`);
+    setTimeout(() => {
+      const newUrl = window.location.href.split('?')[0]; 
+      window.history.replaceState({}, '', newUrl); 
+    }, 1000);
+}
+if (window.location.search.includes("status=success2m")) {
+    showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    sendEmail('course2','Программа похудения', `20`, `Monobank`);
+    setTimeout(() => {
+      const newUrl = window.location.href.split('?')[0]; 
+      window.history.replaceState({}, '', newUrl); 
+    }, 1000);
+}
+if (window.location.search.includes("status=success3m")) {
+    showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    sendEmail('course3','Силовые показатели', `30`, `Monobank`);
+    setTimeout(() => {
+      const newUrl = window.location.href.split('?')[0]; 
+      window.history.replaceState({}, '', newUrl); 
+    }, 1000);
+}
+if (window.location.search.includes("status=success4m")) {
+    showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    sendEmail('course4','Выносливость', `40`, `Monobank`);
+    setTimeout(() => {
+      const newUrl = window.location.href.split('?')[0]; 
+      window.history.replaceState({}, '', newUrl); 
+    }, 1000);
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Функция проверки заполненности формы
     function isFormValid(courseId) {
@@ -12,171 +47,244 @@ document.addEventListener("DOMContentLoaded", function () {
         return true;
     }
 
-    // PayPal - Course 1
-    paypal.Buttons({
-        style: {
-            layout: 'vertical',
-            color: 'blue',
-            shape: 'rect',
-            label: 'paypal'
-        },
-        fundingSource: paypal.FUNDING.PAYPAL,
-        createOrder: function (data, actions) {
-            if (!isFormValid('course1')) return null;
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '10.00'
-                    },
-                    description: 'Ускоренная растяжка - онлайн курс'
-                }]
-            });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
-                sendEmail('course1','Ускоренная растяжка', `10`, `PayPal`);
-            });
-        },
-        onError: function (err) {
-            console.error('Ошибка оплаты:', err);
-            if(!isFormValid('course1')) return;
-            showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
-        }
-    }).render('#paypal-button-container-course1');
+    //Payoneer - 1
 
-    // Monobank - Course 1
-    document.getElementById("monobank-button-course1").addEventListener("click", function () {
-        if (isFormValid('course1')) {
-            showCustomAlert(`Mock`, "success");
-            sendEmail('course1','Ускоренная растяжка', `10`, `Monobank`);
-        }
-    });
+    // payoneerCheckout.renderButton({
+    //     merchantId: 'YOUR_MERCHANT_ID',
+    //     paymentId: 'YOUR_PAYMENT_ID',
+    //     amount: 10.00,
+    //     currency: 'USD',
+    //     paymentDescription: 'Ускоренная растяжка - онлайн курс',
+    //     redirectUrl: window.location.origin + window.location.pathname + "?status=success1p",
+    //   },
+    //   'payoneer-checkout-1',
+    //   function(response) {
+    //     if (response.status === 'success') {
+    //         showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    //         sendEmail('course1','Ускоренная растяжка', `10`, `Payoneer`);
+    //         setTimeout(() => {
+    //           const newUrl = window.location.href.split('?')[0]; 
+    //           window.history.replaceState({}, '', newUrl); 
+    //         }, 1000);
+    //     } else {
+    //         showCustomAlert(`Произошла ошибка. Попробуйте ещё раз`, "error");
+    //     }
+    //   });
 
-
-    //Course 2
-    // PayPal - Course 2
-    paypal.Buttons({
-        style: {
-            layout: 'vertical',
-            color: 'blue',
-            shape: 'rect',
-            label: 'paypal'
-        },
-        fundingSource: paypal.FUNDING.PAYPAL,
-        createOrder: function (data, actions) {
-            if (!isFormValid('course2')) return null;
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '10.00'
-                    },
-                    description: 'Программа похудения - онлайн курс'
-                }]
+    //Mono - 1
+    document.getElementById("plata-by-mono-1").addEventListener("click", async function () {
+        if (!isFormValid('course1')) return;
+        try {
+            const courseDetails = {
+                description: "Ускоренная растяжка - онлайн курс",
+                amount: 10.00 // Сумма в гривнах
+            };
+    
+            // Вызов API для создания счета
+            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobankTest.js", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    amount: courseDetails.amount,
+                    description: courseDetails.description,
+                    redirectUrl: window.location.origin + window.location.pathname + "?status=success1m"
+                }),
             });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
-                sendEmail('course2','Программа похудения', `20`, `PayPal`);
-            });
-        },
-        onError: function (err) {
-            console.error('Ошибка оплаты:', err);
-            if(!isFormValid('course2')) return;
-            showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
-        }
-    }).render('#paypal-button-container-course2');
-
-    // Monobank - Course 2
-    document.getElementById("monobank-button-course2").addEventListener("click", function () {
-        if (isFormValid('course2')) {
-            showCustomAlert(`Mock`, "success");
-            sendEmail('course2','Программа похудения', `20`, `Monobank`);
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Не удалось создать счет");
+            }
+    
+            const { invoiceUrl } = await response.json();
+    
+            // Перенаправление пользователя на страницу оплаты
+            window.location.href = invoiceUrl;
+        } catch (error) {
+            console.error("Ошибка при создании счета:", error.message);
+            alert("Произошла ошибка при создании счета. Попробуйте позже.");
         }
     });
 
-    //Course 3
-    // PayPal - Course 3
-    paypal.Buttons({
-        style: {
-            layout: 'vertical',
-            color: 'blue',
-            shape: 'rect',
-            label: 'paypal'
-        },
-        fundingSource: paypal.FUNDING.PAYPAL,
-        createOrder: function (data, actions) {
-            if (!isFormValid('course3')) return null;
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '30.00'
-                    },
-                    description: 'Силовые показатели - онлайн курс'
-                }]
-            });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
-                sendEmail('course3','Силовые показатели', `30`, `PayPal`);
-            });
-        },
-        onError: function (err) {
-            console.error('Ошибка оплаты:', err);
-            if(!isFormValid('course3')) return;
-            showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
-        }
-    }).render('#paypal-button-container-course3');
+    //Payoneer - 2
+    // payoneerCheckout.renderButton({
+    //     merchantId: 'YOUR_MERCHANT_ID',
+    //     paymentId: 'YOUR_PAYMENT_ID',
+    //     amount: 20.00,
+    //     currency: 'USD',
+    //     paymentDescription: 'Программа похудения - онлайн курс',
+    //     redirectUrl: window.location.origin + window.location.pathname + "?status=success2p",
+    //   },
+    //   'payoneer-checkout-1',
+    //   function(response) {
+    //     if (response.status === 'success') {
+    //         showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    //         sendEmail('course2','Программа похудения', `20`, `Payoneer`);
+    //         setTimeout(() => {
+    //           const newUrl = window.location.href.split('?')[0]; 
+    //           window.history.replaceState({}, '', newUrl); 
+    //         }, 1000);
+    //     } else {
+    //         showCustomAlert(`Произошла ошибка. Попробуйте ещё раз`, "error");
+    //     }
+    //   });
 
-    // Monobank - Course 3
-    document.getElementById("monobank-button-course3").addEventListener("click", function () {
-        if (isFormValid('course3')) {
-            showCustomAlert(`Mock`, "success");
-            sendEmail('course3','Силовые показатели', `30`, `Monobank`);
+    //Mono - 2
+    document.getElementById("plata-by-mono-2").addEventListener("click", async function () {
+        if (!isFormValid('course2')) return;
+        try {
+            const courseDetails = {
+                description: "Ускоренная растяжка - онлайн курс",
+                amount: 10.00 // Сумма в гривнах
+            };
+    
+            // Вызов API для создания счета
+            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobankTest.js", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    amount: courseDetails.amount,
+                    description: courseDetails.description,
+                    redirectUrl: window.location.origin + window.location.pathname + "?status=success2m"
+                }),
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Не удалось создать счет");
+            }
+    
+            const { invoiceUrl } = await response.json();
+    
+            // Перенаправление пользователя на страницу оплаты
+            window.location.href = invoiceUrl;
+        } catch (error) {
+            console.error("Ошибка при создании счета:", error.message);
+            alert("Произошла ошибка при создании счета. Попробуйте позже.");
         }
     });
 
-    //Course 4
-    // PayPal - Course 4
-    paypal.Buttons({
-        style: {
-            layout: 'vertical',
-            color: 'blue',
-            shape: 'rect',
-            label: 'paypal'
-        },
-        fundingSource: paypal.FUNDING.PAYPAL,
-        createOrder: function (data, actions) {
-            if (!isFormValid('course4')) return null;
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '40.00'
-                    },
-                    description: 'Выносливость - онлайн курс'
-                }]
-            });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
-                sendEmail('course4','Выносливость', `40`, `PayPal`);
-            });
-        },
-        onError: function (err) {
-            console.error('Ошибка оплаты:', err);
-            if(!isFormValid('course4')) return;
-            showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
-        }
-    }).render('#paypal-button-container-course4');
+    //Payoneer - 3
+    // payoneerCheckout.renderButton({
+    //     merchantId: 'YOUR_MERCHANT_ID',
+    //     paymentId: 'YOUR_PAYMENT_ID',
+    //     amount: 30.00,
+    //     currency: 'USD',
+    //     paymentDescription: 'Силовые показатели- онлайн курс',
+    //     redirectUrl: window.location.origin + window.location.pathname + "?status=success3p",
+    //   },
+    //   'payoneer-checkout-1',
+    //   function(response) {
+    //     if (response.status === 'success') {
+    //         showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    //         sendEmail('course3','Силовые показатели', `30`, `Payoneer`);
+    //         setTimeout(() => {
+    //           const newUrl = window.location.href.split('?')[0]; 
+    //           window.history.replaceState({}, '', newUrl); 
+    //         }, 1000);
+    //     } else {
+    //         showCustomAlert(`Произошла ошибка. Попробуйте ещё раз`, "error");
+    //     }
+    //   });
 
-    // Monobank - Course 3
-    document.getElementById("monobank-button-course4").addEventListener("click", function () {
-        if (isFormValid('course4')) {
-            showCustomAlert(`Mock`, "success");
-            sendEmail('course4','Выносливость', `40`, `Monobank`);
+    //Mono - 3
+    document.getElementById("plata-by-mono-3").addEventListener("click", async function () {
+        if (!isFormValid('course3')) return;
+        try {
+            const courseDetails = {
+                description: "Ускоренная растяжка - онлайн курс",
+                amount: 10.00 // Сумма в гривнах
+            };
+    
+            // Вызов API для создания счета
+            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobankTest.js", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    amount: courseDetails.amount,
+                    description: courseDetails.description,
+                    redirectUrl: window.location.origin + window.location.pathname + "?status=success3m"
+                }),
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Не удалось создать счет");
+            }
+    
+            const { invoiceUrl } = await response.json();
+    
+            // Перенаправление пользователя на страницу оплаты
+            window.location.href = invoiceUrl;
+        } catch (error) {
+            console.error("Ошибка при создании счета:", error.message);
+            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+        }
+    });
+    
+    //Payoneer - 4
+    // payoneerCheckout.renderButton({
+    //     merchantId: 'YOUR_MERCHANT_ID',
+    //     paymentId: 'YOUR_PAYMENT_ID',
+    //     amount: 40.00,
+    //     currency: 'USD',
+    //     paymentDescription: 'Выносливость - онлайн курс',
+    //     redirectUrl: window.location.origin + window.location.pathname + "?status=success4p",
+    //   },
+    //   'payoneer-checkout-1',
+    //   function(response) {
+    //     if (response.status === 'success') {
+    //         showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
+    //         sendEmail('course4','Выносливость', `40`, `Payoneer`);
+    //         setTimeout(() => {
+    //           const newUrl = window.location.href.split('?')[0]; 
+    //           window.history.replaceState({}, '', newUrl); 
+    //         }, 1000);
+    //     } else {
+    //         showCustomAlert(`Произошла ошибка. Попробуйте ещё раз`, "error");
+    //     }
+    //   });
+
+    //Mono - 4
+    document.getElementById("plata-by-mono-4").addEventListener("click", async function () {
+        if (!isFormValid('course4')) return;
+        try {
+            const courseDetails = {
+                description: "Ускоренная растяжка - онлайн курс",
+                amount: 10.00 // Сумма в гривнах
+            };
+    
+            // Вызов API для создания счета
+            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobankTest.js", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    amount: courseDetails.amount,
+                    description: courseDetails.description,
+                    redirectUrl: window.location.origin + window.location.pathname + "?status=success4m"
+                }),
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Не удалось создать счет");
+            }
+    
+            const { invoiceUrl } = await response.json();
+    
+            // Перенаправление пользователя на страницу оплаты
+            window.location.href = invoiceUrl;
+        } catch (error) {
+            console.error("Ошибка при создании счета:", error.message);
+            alert("Произошла ошибка при создании счета. Попробуйте позже.");
         }
     });
 
