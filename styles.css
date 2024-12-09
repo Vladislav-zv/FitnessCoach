@@ -295,6 +295,7 @@ body {
 
 
 
+
 .divider-light {
     height: 10vh;
     background-color: rgb(255, 255, 255);
@@ -304,6 +305,17 @@ body {
 /***************************************/
 
 /*Courses*/
+#plata-by-mono-1{
+    cursor: pointer;
+}
+#plata-by-mono-2{
+    cursor: pointer;
+}#plata-by-mono-3{
+    cursor: pointer;
+}#plata-by-mono-4{
+    cursor: pointer;
+}
+
 #courses{
     min-height: 50vh;
     background: linear-gradient(
