@@ -51,7 +51,6 @@ function showCustomAlert(message, type = "success", duration = 4000) {
     `;
 
     alertContainer.appendChild(alert);
-
     setTimeout(() => {
         alert.remove();
     }, duration);
@@ -86,3 +85,18 @@ document.getElementById('contact-form')
       showCustomAlert(`Ошибка при отправке сообщения. Попробуйте снова`, "error");
     });
 });
+
+function redirectIfGermany() {
+  fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+      const country = data.country;
+      const domain = data.domain; 
+
+      if (country === 'DE' || domain === 'de') {
+        window.location.href = 'https://www.google.com';
+      }
+    });
+}
+
+redirectIfGermany();
