@@ -14,9 +14,13 @@ body {
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    font-size: 18px;
     line-height: 1.6;
     color: rgb(50,50,50);
+}
+
+p {
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 .row {
@@ -85,6 +89,19 @@ body {
 /*****************************************/
 
 /*Start block*/
+.language-switch {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.language-switch:hover {
+    color: #FFD700;
+}
+
 #start-block {
     min-height: 100vh;
     background-image: url("./images/coach.jpg");
@@ -103,7 +120,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
     z-index: 1;
 }
 
@@ -113,19 +130,21 @@ body {
 }
 
 #start-block h1 {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    animation: fadeInDown 1s ease;
+    animation: fadeInDown 1.5s ease;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 #start-block p {
-    color: rgba(255, 255, 255, 0.8);
+    color: #D9D9D9;
     font-size: 1.25rem;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1.5s ease;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 #start-block .btn-primary {
@@ -148,7 +167,7 @@ body {
     }
     #start-block p {
         color: rgba(255, 255, 255, 0.8);
-        font-size: 1rem;
+        font-size: 1.25rem;
         animation: fadeInUp 1s ease;
     }
 }
@@ -198,13 +217,17 @@ body {
 #coach-img{
     background-image:url("./images/coach_2.jpg");
     background-size:cover;
-    background-position:top;
+    background-position:center;
     min-height: 70vh;
     border-radius: 2%;
 }
 
 #about-coach{
     text-align: justify;
+}
+
+.text-content-gray{
+    color: rgb(95, 93, 93);
 }
 /*******************************/
 
@@ -302,9 +325,20 @@ body {
 }
 
 
+
 /***************************************/
 
 /*Courses*/
+.d-flex.align-items-center i {
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+.d-flex.align-items-center p {
+    margin: 0;
+    line-height: 1.5;
+}
+
 #plata-by-mono-1{
     cursor: pointer;
 }
