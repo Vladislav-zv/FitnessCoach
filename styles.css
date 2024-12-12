@@ -106,7 +106,7 @@ p {
     min-height: 100vh;
     background-image: url("./images/coach.jpg");
     background-size: cover;
-    background-position: top;
+    background-position: 75% center;
     color: white;
     display: flex;
     position: relative;
