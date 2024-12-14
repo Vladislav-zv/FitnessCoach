@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta name="description" content="Персональные фитнес-программы от сертифицированного тренера Анны Копцевой. Индивидуальный подход, эффективные тренировки, план питания и поддержка. Начните свой путь к здоровью и гармонии!">
+    
+    <!-- SEO Метаданные -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Анна Копцева">
+    <meta name="keywords" content="фитнес, персональные тренировки, тренер, план питания, похудение, здоровый образ жизни, Анна Копцева">
+    <meta name="theme-color" content="#000000">
 
-    <title>Фитнес тренер</title>
+    <!-- Open Graph Метаданные -->
+    <meta property="og:title" content="Фитнес тренер Анна Копцева - Персональные программы">
+    <meta property="og:description" content="Персональные фитнес-программы от сертифицированного тренера. Эффективные тренировки, индивидуальный подход и поддержка на пути к здоровью и гармонии.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anakoptseva.com">
+    <meta property="og:image" content="https://anakoptseva.com/images/coach.jpg">
+
+    <!-- Twitter Метаданные -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Фитнес тренер Анна Копцева">
+    <meta name="twitter:description" content="Персональные фитнес-программы от сертифицированного тренера. Начните свой путь к здоровью и гармонии!">
+    <meta name="twitter:image" content="https://anakoptseva.com/images/coach.jpg">
+
+    <!-- Кэширование -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Фитнес тренер Анна Копцева | Персональные программы</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://anakoptseva.com/favicon_32.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://anakoptseva.com/apple-touch-icon.png">
+
+    <!-- Шрифты и стили -->
     <link rel="stylesheet" href="styles.css?v=1.0.1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -16,25 +43,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
+    <!-- Prefetch для производительности -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style">
+
+    <!--Multi language -->
+    <link rel="alternate" hreflang="ru" href="https://anakoptseva.com/">
+    <link rel="alternate" hreflang="uk" href="https://anakoptseva.com/ua">
+
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        if(!f._fbq)n._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
         n.queue=[];t=b.createElement(e);t.async=!0;
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '{your-pixel-id-goes-here}');
+        fbq('init', 'YOUR_PIXEL_ID');
         fbq('track', 'PageView');
-      </script>
-      <noscript>
+    </script>
+    <noscript>
         <img height="1" width="1" style="display:none" 
-             src="https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1"/>
-      </noscript>
-      <!-- End Facebook Pixel Code -->
+             src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
+    
 <body>
     <!-- Notifications Container -->
     <div id="custom-alert-container"></div>
