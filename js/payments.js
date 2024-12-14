@@ -1,4 +1,4 @@
-const webAppUrl = 'https://script.google.com/macros/s/AKfycbwQWm0btMDBZ0ja0i7ws7UV3PlZWQa9SQzzcdTVPOIwEC6OES_pzBaaRSa0GkESF5rMcg/exec'; 
+const webAppUrl = 'https://script.google.com/macros/s/AKfycby7CJQznWvr_z1Wjf9X5DH9EPuCb3L11lvE5KsKwNjmBpzUxPgb8ggE7Q-26GQlIiGqRw/exec'; 
 
 function sendEmail(courseId, courseName, _amount, paymentMethod) {
   const userName = localStorage.getItem(`client_name_${courseId}`);
@@ -15,12 +15,11 @@ function sendEmail(courseId, courseName, _amount, paymentMethod) {
 function addRow(rowData) {
   fetch(webAppUrl, {
     method: 'POST',
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({rowData})
+    body: JSON.stringify({ rowData }),
+    headers: { "Content-Type": "text/plain;charset=utf-8" }
   })
   .then(response => response.text())
-  .then(text => onSuccess(text))
-  .catch(error => onFailure(error));
+  .then(text => onSuccess(text));
 }
 
 function onSuccess(message) {
@@ -58,6 +57,7 @@ function handleSuccess(courseId, courseName, amount, paymentMethod) {
   } catch (error) {
     console.error("Произошла ошибка:", error);
   }
+  console.clear();
 }
 
 if (window.location.search.includes("status=success1m")) {
