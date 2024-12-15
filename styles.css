@@ -89,7 +89,12 @@ p {
 /*****************************************/
 
 /*Start block*/
+.language-switch-wrapper {
+    display: inline; 
+}
+
 .language-switch {
+    display: inline;
     color: rgb(255, 255, 255);
     font-size: 1rem;
     text-decoration: none;
@@ -335,7 +340,7 @@ p {
     margin-bottom: 1rem !important;
 }
 .accordion-button {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(138, 138, 138, 0.2) !important;
     color: rgb(255, 255, 255) !important;
     border: none !important;
     border-radius: 5px !important;
@@ -344,7 +349,7 @@ p {
 }
 
 .accordion-button:hover {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(125, 125, 125, 0.4) !important;
 }
 
 .accordion-button:focus {
@@ -379,16 +384,32 @@ p {
     line-height: 1.5;
 }
 
-#plata-by-mono-1{
+.plata-container {
     cursor: pointer;
+    padding: 15px 20px;
+    border: 1px solid rgba(85, 85, 85, 0.3);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-#plata-by-mono-2{
-    cursor: pointer;
-}#plata-by-mono-3{
-    cursor: pointer;
-}#plata-by-mono-4{
-    cursor: pointer;
+
+.plata-container:hover {
+    background: linear-gradient(135deg, #f8f8f8, #e0e0e0);
+    border-color: rgba(85, 85, 85, 0.6);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
+
+.plata-container:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 
 #courses{
     min-height: 50vh;
