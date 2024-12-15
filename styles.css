@@ -106,7 +106,7 @@ p {
     min-height: 100vh;
     background-image: url("./images/coach.jpg");
     background-size: cover;
-    background-position: 75% center;
+    background-position: 75% center; /* Сдвигает фон немного вправо */
     color: white;
     display: flex;
     position: relative;
@@ -329,6 +329,46 @@ p {
 /***************************************/
 
 /*Courses*/
+.accordion-item {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    margin-bottom: 1rem !important;
+}
+.accordion-button {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: rgb(255, 255, 255) !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 1rem !important;
+    transition: background 0.3s ease-in-out !important;
+}
+
+.accordion-button:hover {
+    background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-button .fa-plus {
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) .fa-plus {
+    transform: rotate(45deg);
+}
+
+.accordion-body {
+    padding: 1rem 1.5rem;
+}
+
+
+
 .d-flex.align-items-center i {
     line-height: 1;
     display: flex;
