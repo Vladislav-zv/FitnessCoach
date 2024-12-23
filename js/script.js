@@ -39,6 +39,28 @@ var swiper = new Swiper(".mySwiper", {
     }
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const ratings = document.querySelectorAll('.rating');
+
+    ratings.forEach(rating => {
+        const ratingValue = parseFloat(rating.getAttribute('data-rating'));
+        const fullStars = Math.floor(ratingValue);
+        const halfStar = ratingValue % 1 >= 0.5;
+        const emptyStars = 5 - Math.ceil(ratingValue);
+
+        for (let i = 0; i < fullStars; i++) {
+            rating.innerHTML += '<i class="fas fa-star"></i>';
+        }
+
+        if (halfStar) {
+            rating.innerHTML += '<i class="fas fa-star-half-alt"></i>';
+        }
+
+        for (let i = 0; i < emptyStars; i++) {
+            rating.innerHTML += '<i class="far fa-star empty"></i>';
+        }
+    });
+});
 
 function showCustomAlert(message, type = "success", duration = 4000) {
     const alertContainer = document.getElementById("custom-alert-container");
