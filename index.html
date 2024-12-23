@@ -43,6 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Prefetch для производительности -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -85,13 +86,13 @@
     <!-- End Facebook Pixel Code -->
 </head>
     
-<body>
+<body class="manrope-regular">
     <!-- Notifications Container -->
     <div id="custom-alert-container"></div>
     <header>
         <section class="container-fluid p-5" id="start-block">
             <div class="d-flex flex-column justify-content-between">
-                <div class="language-switch-wrapper">
+                <div class="language-switch-wrapper ms-auto ms-sm-0 ms-md-0 ms-lg-0 ms-xl-0 ms-xxl-0">
                     <a href="/ua/" class="language-switch">UA</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/" class="language-switch">RU</a>
                 </div>                
                 <div class="row justify-content-center align-items-center flex-grow-1">
@@ -110,7 +111,7 @@
     </header>
     
 
-    <main class="roboto-regular">
+    <main>
         <!-- О тренере -->
         <section class="container-fluid p-3 p-lg-5" id="coach">
             <div class="row w-100 h-100 p-3">
@@ -118,7 +119,7 @@
                 <div class="col-md-7 col-lg-8 ps-4 pe-4 p-5" id="about-coach">
                     <h2 class="fw-bold text-uppercase mb-3">О тренере</h2>
                     <p class="mb-4 text-content-gray">
-                         Привет! Меня зовут Анна Копцева, я сертифицированный фитнес-тренер с многолетним опытом работы. Моя цель – помочь вам обрести гармонию с собственным телом, улучшить физическую форму и обрести уверенность в себе. Я разработала авторские программы, которые подойдут как новичкам, так и опытным спортсменам.
+                         Привет! Меня зовут Анна Копцева, я сертифицированный фитнес-тренер с многолетним опытом работы. Моя цель – помочь вам обрести гармонию с собственным телом, улучшить физическую форму и повысить уверенность в себе. Я разработала авторские программы, которые подойдут как новичкам, так и опытным спортсменам.
                     </p>
                     <ul class="list-unstyled">
                         <li class="mb-3 d-flex align-items-start">
@@ -144,7 +145,7 @@
                             <div>
                                 <h5 class="mb-1 fw-bold">Достижения</h5>
                                 <p class="text-content-gray mb-0">
-                                    Более 7 лет опыта работы в фитнес-индустрии, множество успешных кейсов клиентов, а также регулярное повышение квалификации через международные курсы и семинары.
+                                    Более 10 лет опыта работы в фитнес-индустрии, множество успешных кейсов клиентов, а также регулярное повышение квалификации.
                                 </p>
                             </div>
                         </li>
@@ -171,45 +172,49 @@
                     <div class="w-100 d-flex align-content-center justify-content-center pb-3">
                         <img src="./images/ico_1.png" alt="Health">
                     </div>
-                    <p class="text-center courses-name">Персональная программа для самостоятельной работы                    </p>
-                    <a class="btn btn-outline-light w-100" href="#course-1">Подробнее</a>
+                    <div class="text-center">
+                        <p class="text-center courses-name">Персональная программа для самостоятельной работы</p>
+                        <a class="btn text-light rounded-pill btn-order w-75" href="#course-1">Подробнее</a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-12 pb-xs-5">
                     <div class="w-100 d-flex align-content-center justify-content-center pb-3">
                         <img src="./images/ico_2.png" alt="Health">
                     </div>
-                    <p class="text-center courses-name">Программа питания</p>
-                    <a class="btn btn-outline-light w-100" href="#course-2">Подробнее</a>
+                    <div class="text-center">
+                        <p class="courses-name mb-md-5 mb-lg-5 mb-xl-5 mb-xxl-5 mb-xxxl-5">Программа питания</p>
+                        <a class="btn text-light rounded-pill btn-order w-75" href="#course-2">Подробнее</a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-12 pb-xs-5">
                     <div class="w-100 d-flex align-content-center justify-content-center pb-3">
                         <img src="./images/ico_4.png" alt="Health">
                     </div>
-                    <p class="text-center courses-name">Программа на похудение/набор с акцентом на ягодицы</p>
-                    <a class="btn btn-outline-light w-100" href="#course-4">Подробнее</a>
+                    <div class="text-center">
+                        <p class="text-center courses-name">Программа на похудение/набор с акцентом на ягодицы</p>
+                        <a class="btn text-light rounded-pill btn-order w-75" href="#course-4">Подробнее</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="divider-light"></section>
-
         <!--Курс 1-->
-        <section class="container-fluid p-0 m-0" id="course-1">
+        <section class="container-fluid pt-5 pb-5 p-0 m-0 course-content" id="course-1">
             <div class="row w-100 g-0">
                 <div class="col-md-5 col-lg-4 pb-5" id="course-1-img"></div>
-                <div class="col-md-7 col-lg-8 course-content p-3 p-lg-5 pt-5">
-                    <h1 class="text-center pb-5 roboto-regular">Персональная программа для самостоятельной работы</h1>
+                <div class="col-md-7 col-lg-8 p-3 p-lg-5 pt-5">
+                    <h1 class="text-center pb-5">Персональная программа для самостоятельной работы</h1>
     
                     <div class="accordion" id="course1Accordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingCourse1_1">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCourse1_1" aria-expanded="false" aria-controls="collapseCourse1_1">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Индивидуальный подход</p>
+                                    <p class="m-0 fs-4 text-start">Индивидуальный подход</p>
                                 </button>
                             </h2>
                             <div id="collapseCourse1_1" class="accordion-collapse collapse" aria-labelledby="headingCourse1_1" data-bs-parent="#course1Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Программа создается специально под ваши цели, уровень физической подготовки и состояние здоровья. Это обеспечивает максимальную эффективность и безопасность.
                                 </div>
                             </div>
@@ -219,12 +224,12 @@
                             <h2 class="accordion-header" id="headingCourse1_2">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCourse1_2" aria-expanded="false" aria-controls="collapseCourse1_2">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Постоянная поддержка</p>
+                                    <p class="m-0 fs-4 text-start">Постоянная поддержка</p>
                                 </button>
                             </h2>
                             <div id="collapseCourse1_2" class="accordion-collapse collapse" aria-labelledby="headingCourse1_2" data-bs-parent="#course1Accordion">
-                                <div class="accordion-body roboto-light">
-                                    Вы получаете возможность оперативно консультироваться с тренером в рабочее время, чтобы задавать вопросы, уточнять детали или корректировать план.
+                                <div class="accordion-body">
+                                    Вы получаете возможность оперативно консультироваться с тренером в рабочее время, чтобы задавать вопросы.
                                 </div>
                             </div>
                         </div>
@@ -233,11 +238,11 @@
                             <h2 class="accordion-header" id="headingCourse1_3">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCourse1_3" aria-expanded="false" aria-controls="collapseCourse1_3">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Гибкая адаптация</p>
+                                    <p class="m-0 fs-4 text-start">Гибкая адаптация</p>
                                 </button>
                             </h2>
                             <div id="collapseCourse1_3" class="accordion-collapse collapse" aria-labelledby="headingCourse1_3" data-bs-parent="#course1Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Программа легко подстраивается под ваш образ жизни, включая рабочий график, домашние дела и личные предпочтения, чтобы занятия были комфортными и эффективными.
                                 </div>
                             </div>
@@ -247,11 +252,11 @@
                             <h2 class="accordion-header" id="headingCourse1_4">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCourse1_4" aria-expanded="false" aria-controls="collapseCourse1_4">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Еженедельный анализ прогресса</p>
+                                    <p class="m-0 fs-4 text-start">Еженедельный анализ прогресса</p>
                                 </button>
                             </h2>
                             <div id="collapseCourse1_4" class="accordion-collapse collapse" aria-labelledby="headingCourse1_4" data-bs-parent="#course1Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Регулярный контроль ваших результатов позволяет оценивать эффективность программы и вносить коррективы для достижения ваших целей.
                                 </div>
                             </div>
@@ -261,18 +266,18 @@
                             <h2 class="accordion-header" id="headingCourse1_5">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCourse1_5" aria-expanded="false" aria-controls="collapseCourse1_5">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Комплексное сопровождение</p>
+                                    <p class="m-0 fs-4 text-start">Комплексное сопровождение</p>
                                 </button>
                             </h2>
                             <div id="collapseCourse1_5" class="accordion-collapse collapse" aria-labelledby="headingCourse1_5" data-bs-parent="#course1Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Вы получаете полное руководство по тренировкам, питанию и образу жизни, что обеспечивает всесторонний подход к вашему здоровью и прогрессу.
                                 </div>
                             </div>
                         </div>
                     </div>
     
-                    <button type="button" class="btn btn-primary mt-4 mb-2 fs-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Заказать</button>
+                    <button type="button" class="btn btn-primary mt-4 mb-2 fs-5 btn-order rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Заказать</button>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered text-dark">
                             <div class="modal-content">
@@ -303,8 +308,8 @@
                                         </div>
                                     </div>
                                     <h5 class="text-center mb-3">Реквизиты</h5>
-                                    <p class="roboto-medium">Приватбанк: 1234 5678 9012 3456</p>
-                                    <p class="roboto-medium">Монобанк: 1234 5678 9012 3456</p>  
+                                    <p class="">Приватбанк: 1234 5678 9012 3456</p>
+                                    <p class="">Монобанк: 1234 5678 9012 3456</p>  
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -316,26 +321,24 @@
             </div>
         </section>
 
-        <section class="divider-light"></section>
-
         <!--2 Курс-->
-        <section class="container-fluid p-0 m-0" id="course-2">
+        <section class="container-fluid pt-5 pb-5 p-0 m-0 course-content" id="course-2">
             <div class="row w-100 g-0">
                 <div class="col-md-5 col-lg-4 pb-5" id="course-2-img"></div>
-                <div class="col-md-7 col-lg-8 course-content p-3 p-lg-5 pt-5">
-                    <h1 class="text-center pb-5 roboto-regular">Программа питания</h1>
+                <div class="col-md-7 col-lg-8 p-lg-5 pt-5 p-3">
+                    <h1 class="text-center pb-5">Программа питания</h1>
         
                     <div class="accordion" id="course2Accordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingNutrition1">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition1" aria-expanded="false" aria-controls="collapseNutrition1">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Разнообразие рациона</p>
+                                    <p class="m-0 fs-4 text-start">Разнообразие рациона</p>
                                 </button>
                             </h2>
                             <div id="collapseNutrition1" class="accordion-collapse collapse" aria-labelledby="headingNutrition1" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body roboto-light">
-                                    Программа включает вкусное и сбалансированное меню на 4 недели, чтобы питание не стало однообразным и скучным.
+                                <div class="accordion-body">
+                                    Программа включает вкусное и сбалансированное меню на 4 недели, чтобы питание не было однообразным и скучным.
                                 </div>
                             </div>
                         </div>
@@ -344,11 +347,11 @@
                             <h2 class="accordion-header" id="headingNutrition2">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition2" aria-expanded="false" aria-controls="collapseNutrition2">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Экономическая выгода</p>
+                                    <p class="m-0 fs-4 text-start">Экономическая выгода</p>
                                 </button>
                             </h2>
                             <div id="collapseNutrition2" class="accordion-collapse collapse" aria-labelledby="headingNutrition2" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Вы получаете 5 рационов с разной калорийностью по цене одной программы, что позволяет легко выбрать оптимальный вариант под ваши цели.
                                 </div>
                             </div>
@@ -358,12 +361,12 @@
                             <h2 class="accordion-header" id="headingNutrition3">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition3" aria-expanded="false" aria-controls="collapseNutrition3">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Удобство планирования</p>
+                                    <p class="m-0 fs-4 text-start">Удобство планирования</p>
                                 </button>
                             </h2>
                             <div id="collapseNutrition3" class="accordion-collapse collapse" aria-labelledby="headingNutrition3" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body roboto-light">
-                                    Каждую неделю вы получаете готовый список продуктов для закупки, что значительно экономит ваше время и упрощает процесс.
+                                <div class="accordion-body">
+                                    Каждую неделю вы получаете готовый список продуктов для закупки, что упрощает процесс и значительно экономит ваше время.
                                 </div>
                             </div>
                         </div>
@@ -372,12 +375,12 @@
                             <h2 class="accordion-header" id="headingNutrition4">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition4" aria-expanded="false" aria-controls="collapseNutrition4">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Точный расчет</p>
+                                    <p class="m-0 fs-4 text-start">Подробный расчет</p>
                                 </button>
                             </h2>
                             <div id="collapseNutrition4" class="accordion-collapse collapse" aria-labelledby="headingNutrition4" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body roboto-light">
-                                    В меню предоставляется точный расчет калорийности, белков, жиров и углеводов для каждого приема пищи, что помогает точно следовать плану.
+                                <div class="accordion-body">
+                                    В меню предоставляется подробный расчет калорийности, белков, жиров и углеводов для каждого приема пищи, что помогает точно следовать плану.
                                 </div>
                             </div>
                         </div>
@@ -386,18 +389,18 @@
                             <h2 class="accordion-header" id="headingNutrition5">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition5" aria-expanded="false" aria-controls="collapseNutrition5">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Сбалансированное соотношение БЖУ</p>
+                                    <p class="m-0 fs-4 text-start">Сбалансированное соотношение БЖУ</p>
                                 </button>
                             </h2>
                             <div id="collapseNutrition5" class="accordion-collapse collapse" aria-labelledby="headingNutrition5" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Программа разработана с учетом оптимального соотношения белков, жиров и углеводов для поддержания здоровья и достижения результатов.
                                 </div>
                             </div>
                         </div>
                     </div>
         
-                    <button type="button" class="btn btn-primary mt-4 mb-2 fs-5" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse2">Заказать</button>
+                    <button type="button" class="btn btn-primary btn-order mt-4 mb-2 fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse2">Заказать</button>
                     <div class="modal fade" id="staticBackdropCourse2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered text-dark">
                             <div class="modal-content">
@@ -425,8 +428,8 @@
                                     </div>
                                     <div id="payoneer-checkout-2"></div>
                                     <h5 class="text-center mb-3">Реквизиты</h5>
-                                    <p class="roboto-medium">Приватбанк: 1234 5678 9012 3456</p>
-                                    <p class="roboto-medium">Монобанк: 1234 5678 9012 3456</p> 
+                                    <p class="">Приватбанк: 1234 5678 9012 3456</p>
+                                    <p class="">Монобанк: 1234 5678 9012 3456</p> 
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -437,26 +440,25 @@
                 </div>
             </div>
         </section>
-        <section class="divider-light"></section>
 
         <!--3 Курс-->
-        <section class="container-fluid p-0 m-0" id="course-4">
+        <section class="container-fluid pt-5 pb-5 p-0 m-0 course-content" id="course-4">
             <div class="row w-100 g-0">
                 <div class="col-md-5 col-lg-4 pb-5" id="course-4-img"></div>
-                <div class="col-md-7 col-lg-8 course-content p-3 p-lg-5 pt-5">
-                    <h1 class="text-center pb-5 roboto-regular">Программа на похудение/набор с акцентом на ягодицы</h1>
+                <div class="col-md-7 col-lg-8 p-3 p-lg-5 pt-5">
+                    <h1 class="text-center pb-5">Программа на похудение/набор с акцентом на ягодицы</h1>
         
                     <div class="accordion" id="course3Accordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingGlutes1">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGlutes1" aria-expanded="false" aria-controls="collapseGlutes1">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Комплексный подход к тренировкам и питанию</p>
+                                    <p class="m-0 fs-4 text-start">Комплексный подход к тренировкам и питанию</p>
                                 </button>
                             </h2>
                             <div id="collapseGlutes1" class="accordion-collapse collapse" aria-labelledby="headingGlutes1" data-bs-parent="#course3Accordion">
-                                <div class="accordion-body roboto-light">
-                                    Программа включает детально проработанные тренировки и продуманное питание, что позволяет вам работать над формой тела эффективно и сбалансированно.
+                                <div class="accordion-body">
+                                    Программа включает разработанные тренировки и оптимальные рекомендации по питанию, что позволяет вам работать над формой тела эффективно и сбалансированно.
                                 </div>
                             </div>
                         </div>
@@ -465,11 +467,11 @@
                             <h2 class="accordion-header" id="headingGlutes2">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGlutes2" aria-expanded="false" aria-controls="collapseGlutes2">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Гибкость выбора направления</p>
+                                    <p class="m-0 fs-4 text-start">Гибкость выбора направления</p>
                                 </button>
                             </h2>
                             <div id="collapseGlutes2" class="accordion-collapse collapse" aria-labelledby="headingGlutes2" data-bs-parent="#course3Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Программа подходит как для похудения, так и для набора мышечной массы. Вы выбираете нужное направление и следуете рекомендациям для достижения целей.
                                 </div>
                             </div>
@@ -479,12 +481,12 @@
                             <h2 class="accordion-header" id="headingGlutes3">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGlutes3" aria-expanded="false" aria-controls="collapseGlutes3">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Долгосрочный результат</p>
+                                    <p class="m-0 fs-4 text-start">Долгосрочный результат</p>
                                 </button>
                             </h2>
                             <div id="collapseGlutes3" class="accordion-collapse collapse" aria-labelledby="headingGlutes3" data-bs-parent="#course3Accordion">
-                                <div class="accordion-body roboto-light">
-                                    Программа рассчитана на 12 недель, что достаточно для формирования устойчивых привычек в питании и тренировках, а также для видимого результата.
+                                <div class="accordion-body">
+                                    Программа рассчитана на 12 недель, что достаточно для формирования устойчивых привычек в питании и тренировках, а также для достижения своих целей.
                                 </div>
                             </div>
                         </div>
@@ -493,18 +495,18 @@
                             <h2 class="accordion-header" id="headingGlutes4">
                                 <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGlutes4" aria-expanded="false" aria-controls="collapseGlutes4">
                                     <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 roboto-light fs-4 text-start">Видеоуроки в Telegram</p>
+                                    <p class="m-0 fs-4 text-start">Видеоуроки в Telegram</p>
                                 </button>
                             </h2>
                             <div id="collapseGlutes4" class="accordion-collapse collapse" aria-labelledby="headingGlutes4" data-bs-parent="#course3Accordion">
-                                <div class="accordion-body roboto-light">
+                                <div class="accordion-body">
                                     Вы получаете доступ к подробным видеоурокам с правильной техникой выполнения упражнений прямо в Telegram, что делает обучение удобным и доступным в любое время.
                                 </div>
                             </div>
                         </div>
                     </div>
         
-                    <button type="button" class="btn btn-primary mt-4 mb-2 fs-5" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse4">Заказать</button>
+                    <button type="button" class="btn btn-primary btn-order mt-4 mb-2 fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse4">Заказать</button>
                     <div class="modal fade" id="staticBackdropCourse4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered text-dark">
                             <div class="modal-content">
@@ -532,8 +534,8 @@
                                     </div>
                                     <div id="payoneer-checkout-4"></div>
                                     <h5 class="text-center mb-3">Реквизиты</h5>
-                                    <p class="roboto-medium">Приватбанк: 1234 5678 9012 3456</p>
-                                    <p class="roboto-medium">Монобанк: 1234 5678 9012 3456</p> 
+                                    <p class="">Приватбанк: 1234 5678 9012 3456</p>
+                                    <p class="">Монобанк: 1234 5678 9012 3456</p> 
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -574,7 +576,7 @@
         </section>
     </main>
 
-    <footer class="roboto-regular">
+    <footer class="">
         <section class="container-fluid p-5" id="contacts">
             <div class="row">
                 <div class="col-md-6 pb-5">
