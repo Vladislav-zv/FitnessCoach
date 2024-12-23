@@ -220,7 +220,7 @@ p {
 }
 
 #coach-img{
-    background-image:url("./images/coach_2.jpg");
+    background-image:url("./images/coach_2.jpeg");
     background-size:cover;
     background-position:center;
     min-height: 70vh;
@@ -332,12 +332,27 @@ p {
 
 
 /***************************************/
-
 h1{
     word-spacing: 10px;
 }
 
+
 /*Courses*/
+.btn-order {
+    background-color: #344998 !important;
+    border:none !important;
+    padding: 15px 30px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important; 
+}
+
+.btn-order:hover{
+    background-color: #25356e !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+
 .accordion-item {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border: none !important;
@@ -442,10 +457,12 @@ h1{
     text-align: justify;
 }
 #course-1-img{
-    min-height: 40vh;
+    min-height: 50vh;
+    max-height: 90vh;
     background-image:url("./images/course_img_1.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: right 30%;
+    border-radius: 2%;
 }
 
 #course-2 {
@@ -455,10 +472,12 @@ h1{
     text-align: justify;
 }
 #course-2-img{
-    min-height: 40vh;
+    min-height: 50vh;
+    max-height: 90vh;
     background-image:url("./images/course_img_2.jpg");
     background-size: cover;
     background-position: center;
+    border-radius: 2%;
 }
 
 #course-3 {
@@ -468,10 +487,12 @@ h1{
     text-align: justify;
 }
 #course-3-img{
-    min-height: 40vh;
+    min-height: 50vh;
+    max-height: 90vh;
     background-image:url("./images/course_img_3.jpg");
     background-size: cover;
     background-position: center;
+    border-radius: 2%;
 }
 
 #course-4 {
@@ -481,12 +502,20 @@ h1{
     text-align: justify;
 }
 #course-4-img{
-    min-height: 40vh;
+    min-height: 50vh;
+    max-height: 90vh;
     background-image:url("./images/course_img_4.jpg");
     background-size: cover;
     background-position: center;
+    border-radius: 2%;
 }
 
+@media(min-width:1935px)
+{
+    #courses p{
+        margin-bottom: 3rem;
+    }
+}
 /**************************************/
 
 /*Contacts*/
@@ -607,6 +636,8 @@ footer{
 }
 
 /*Google fonts*/
+
+/*Robot*/
 .roboto-thin {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -679,4 +710,89 @@ footer{
     font-style: italic;
   }
 
+
+  /*Manrope*/
+  .manrope-extralight {
+    font-family: "Manrope", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .manrope-light {
+    font-family: "Manrope", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .manrope-regular {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .manrope-medium {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .manrope-semibold {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .manrope-bold {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .manrope-extrabold {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .manrope-extralight-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .manrope-light-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .manrope-regular-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .manrope-medium-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .manrope-semibold-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .manrope-bold-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .manrope-extrabold-italic {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
 /***********************************/
