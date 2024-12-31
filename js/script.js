@@ -62,6 +62,7 @@ var swiper = new Swiper(".mySwiper", {
     });
 });
 
+
 function showCustomAlert(message, type = "success", duration = 4000) {
     const alertContainer = document.getElementById("custom-alert-container");
 
@@ -120,5 +121,45 @@ function redirectIfGermany() {
       }
     });
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  function BlurCourse() {
+      const courseWrapper = document.querySelector("#course-2 .course-overlay-wrapper");
+      const timerElement = document.getElementById("course-2-timer");
+
+      if (!courseWrapper || !timerElement) {
+          console.error("Elements not found: courseWrapper or timerElement");
+          return;
+      }
+
+      // Дата окончания курса
+      const releaseDate = new Date("2025-01-30").getTime();
+
+      // Обновление таймера каждую секунду
+      const interval = setInterval(() => {
+          const now = new Date().getTime();
+          const distance = releaseDate - now;
+
+          if (distance > 0) {
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              timerElement.textContent = `${days} days`;
+          } else {
+              clearInterval(interval);
+              courseWrapper.classList.remove("blurred");
+              const overlay = courseWrapper.querySelector(".course-overlay");
+              if (overlay) {
+                  overlay.classList.add("d-none");
+              }
+          }
+      }, 1000);
+
+      // Включение эффекта затемнения
+      courseWrapper.classList.add("blurred");
+  }
+
+  BlurCourse();
+});
+
 
 redirectIfGermany();
