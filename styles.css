@@ -90,16 +90,17 @@ p {
 
 /*Start block*/
 .language-switch-wrapper {
-    display: inline; 
+    position: absolute !important;
+    top: 20px !important; 
+    right: 20px !important;
+    z-index: 3 !important;
 }
 
 .language-switch {
-    display: inline;
     color: rgb(255, 255, 255);
     font-size: 1rem;
     text-decoration: none;
     font-weight: bold;
-    z-index: 2;
     transition: color 0.3s ease;
 }
 
@@ -108,13 +109,16 @@ p {
 }
 
 #start-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background-image: url("./images/coach.jpg");
     background-size: cover;
     background-position: 75% center; /* Сдвигает фон немного вправо */
     color: white;
-    display: flex;
-    position: relative;
+    position: relative; /* Позволяет правильно позиционировать дочерние элементы */
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
@@ -128,6 +132,7 @@ p {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
     z-index: 1;
 }
+
 
 #start-block > * {
     position: relative;
@@ -358,6 +363,53 @@ p {
 
 
 /***************************************/
+
+/*************************************** Блюр*/
+.course-overlay-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Затемнение */
+    backdrop-filter: blur(5px); /* Размытие */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: white;
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.overlay-content .coming-soon {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.overlay-content .countdown-timer {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.course-overlay-wrapper .d-none {
+    display: none;
+}
+
+.course-overlay-wrapper.blurred .course-overlay {
+    display: flex;
+}
+
+/***************************************/
+
 h1{
     word-spacing: 10px;
 }
@@ -468,6 +520,7 @@ h1{
 
 .courses-name{
     font-size: 22px;
+    margin-bottom: 30px;
 }
 
 .course-content{
@@ -482,14 +535,35 @@ h1{
     color: rgb(255, 255, 255);
     text-align: start;
 }
-#course-1-img{
-    min-height: 50vh;
+#course-1-img {
+    position: relative;
+    min-height: 60vh;
     max-height: 90vh;
-    background-image:url("./images/course_img_1.jpg");
+    background-image: url("./images/course_img_1.jpg");
     background-size: cover;
     background-position: right 30%;
     border-radius: 2%;
+    filter: brightness(0.9);
+    overflow: hidden;
 }
+
+#course-1-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(15, 20, 42, 0.4),
+        rgba(15, 20, 42, 0.2) 
+    );
+    z-index: 1;
+    border-radius: inherit;
+}
+
+
 
 #course-2 {
     min-height: 40vh;
@@ -497,13 +571,33 @@ h1{
     color: rgb(255, 255, 255);
     text-align: start;
 }
-#course-2-img{
-    min-height: 50vh;
+
+#course-2-img {
+    position: relative;
+    min-height: 60vh;
     max-height: 90vh;
-    background-image:url("./images/course_img_2.jpg");
+    background-image: url("./images/course_img_2.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 2%;
+    filter: brightness(0.9);
+    overflow: hidden;
+}
+
+#course-2-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(15, 20, 42, 0.4),
+        rgba(15, 20, 42, 0.2) 
+    );
+    z-index: 1;
+    border-radius: inherit;
 }
 
 #course-3 {
@@ -512,13 +606,33 @@ h1{
     color: rgb(255, 255, 255);
     text-align: start;
 }
-#course-3-img{
-    min-height: 50vh;
+
+#course-3-img {
+    position: relative;
+    min-height: 60vh;
     max-height: 90vh;
-    background-image:url("./images/course_img_3.jpg");
+    background-image: url("./images/course_img_3.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: right 30%;
     border-radius: 2%;
+    filter: brightness(0.9);
+    overflow: hidden;
+}
+
+#course-3-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(15, 20, 42, 0.4),
+        rgba(15, 20, 42, 0.2) 
+    );
+    z-index: 1;
+    border-radius: inherit;
 }
 
 #course-4 {
@@ -527,21 +641,41 @@ h1{
     color: rgb(255, 255, 255);
     text-align: start;
 }
-#course-4-img{
-    min-height: 50vh;
+
+#course-4-img {
+    position: relative;
+    min-height: 60vh;
     max-height: 90vh;
-    background-image:url("./images/course_img_4.jpg");
+    background-image: url("./images/course_img_4.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: right 30%;
     border-radius: 2%;
+    filter: brightness(0.9);
+    overflow: hidden;
 }
 
-@media(min-width:1935px)
-{
-    #courses p{
-        margin-bottom: 3rem;
-    }
+#course-4-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(15, 20, 42, 0.4),
+        rgba(15, 20, 42, 0.2) 
+    );
+    z-index: 1;
+    border-radius: inherit;
 }
+
+/* @media(max-width:1935px)
+{
+    .courses-name{
+        padding-bottom: 100px;
+    }
+} */
 /**************************************/
 
 /*Contacts*/
