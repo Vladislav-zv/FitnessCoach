@@ -91,10 +91,10 @@
     <div id="custom-alert-container"></div>
     <header>
         <section class="container-fluid p-5" id="start-block">
-            <div class="d-flex flex-column justify-content-between">
-                <div class="language-switch-wrapper ms-auto ms-sm-0 ms-md-0 ms-lg-0 ms-xl-0 ms-xxl-0">
-                    <a href="/ua/" class="language-switch">UA</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/" class="language-switch">RU</a>
-                </div>                
+            <div class="language-switch-wrapper">
+                <a href="/ua/" class="language-switch">UA</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/" class="language-switch">RU</a>
+            </div>
+            <div class="d-flex flex-column justify-content-between h-100 w-100 position-relative">                
                 <div class="row justify-content-center align-items-center flex-grow-1">
                     <div class="col-12 text-center">
                         <h1>Анна Копцева</h1>
@@ -103,12 +103,13 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
-                        <a class="btn btn-primary btn-lg ps-5 pe-5 fs-5 rounded-pill" href="#courses">Подробнее</a>
+                        <a class="btn btn-order text-light btn-lg ps-5 pe-5 fs-5 rounded-pill" href="#courses">Подробнее</a>
                     </div>
                 </div>
             </div>
         </section>
     </header>
+    
     
 
     <main>
@@ -182,7 +183,7 @@
                         <img src="./images/ico_2.png" alt="Health">
                     </div>
                     <div class="text-center">
-                        <p class="courses-name mb-md-5 mb-lg-5 mb-xl-5 mb-xxl-5 mb-xxxl-5">Программа питания</p>
+                        <p class="courses-name">Программа питания</p>
                         <a class="btn text-light rounded-pill btn-order w-75" href="#course-2">Подробнее</a>
                     </div>
                 </div>
@@ -200,7 +201,7 @@
 
         <!--Курс 1-->
         <section class="container-fluid pb-5 p-0 m-0 course-content" id="course-1">
-            <div class="row w-100 g-0">
+            <div class="row w-100 g-0 p-3 p-md-5">
                 <div class="col-md-5 col-lg-4 mb-5" id="course-1-img"></div>
                 <div class="col-md-7 col-lg-8 p-3 ps-lg-5 pe-lg-5 pt-md-5">
                     <h1 class="text-center pb-5">Персональная программа для самостоятельной работы</h1>
@@ -278,7 +279,7 @@
                     </div>
     
                     <div class="w-100 d-flex justify-content-end mt-4 mb-2 pe-5">
-                        <button type="button" class="btn btn-primary fs-5 btn-order rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Заказать</button>
+                        <button type="button" class="btn btn-primary fs-5 btn-order rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Приобрести</button>
                     </div>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered text-dark">
@@ -323,131 +324,9 @@
             </div>
         </section>
 
-        <!--2 Курс-->
-        <section class="container-fluid pb-5 p-0 m-0 course-content" id="course-2">
-            <div class="row w-100 g-0">
-                <div class="col-md-5 col-lg-4 mb-5" id="course-2-img"></div>
-                <div class="col-md-7 col-lg-8 p-3 ps-lg-5 pe-lg-5 pt-md-5">
-                    <h1 class="text-center pb-5">Программа питания</h1>
-        
-                    <div class="accordion" id="course2Accordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingNutrition1">
-                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition1" aria-expanded="false" aria-controls="collapseNutrition1">
-                                    <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 fs-4 text-start">Разнообразие рациона</p>
-                                </button>
-                            </h2>
-                            <div id="collapseNutrition1" class="accordion-collapse collapse" aria-labelledby="headingNutrition1" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body">
-                                    Программа включает вкусное и сбалансированное меню на 4 недели, чтобы питание не было однообразным и скучным.
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingNutrition2">
-                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition2" aria-expanded="false" aria-controls="collapseNutrition2">
-                                    <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 fs-4 text-start">Экономическая выгода</p>
-                                </button>
-                            </h2>
-                            <div id="collapseNutrition2" class="accordion-collapse collapse" aria-labelledby="headingNutrition2" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body">
-                                    Вы получаете 5 рационов с разной калорийностью по цене одной программы, что позволяет легко выбрать оптимальный вариант под ваши цели.
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingNutrition3">
-                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition3" aria-expanded="false" aria-controls="collapseNutrition3">
-                                    <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 fs-4 text-start">Удобство планирования</p>
-                                </button>
-                            </h2>
-                            <div id="collapseNutrition3" class="accordion-collapse collapse" aria-labelledby="headingNutrition3" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body">
-                                    Каждую неделю вы получаете готовый список продуктов для закупки, что упрощает процесс и значительно экономит ваше время.
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingNutrition4">
-                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition4" aria-expanded="false" aria-controls="collapseNutrition4">
-                                    <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 fs-4 text-start">Подробный расчет</p>
-                                </button>
-                            </h2>
-                            <div id="collapseNutrition4" class="accordion-collapse collapse" aria-labelledby="headingNutrition4" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body">
-                                    В меню предоставляется подробный расчет калорийности, белков, жиров и углеводов для каждого приема пищи, что помогает точно следовать плану.
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingNutrition5">
-                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition5" aria-expanded="false" aria-controls="collapseNutrition5">
-                                    <i class="fa-solid fa-plus fa-xl me-4"></i>
-                                    <p class="m-0 fs-4 text-start">Сбалансированное соотношение БЖУ</p>
-                                </button>
-                            </h2>
-                            <div id="collapseNutrition5" class="accordion-collapse collapse" aria-labelledby="headingNutrition5" data-bs-parent="#course2Accordion">
-                                <div class="accordion-body">
-                                    Программа разработана с учетом оптимального соотношения белков, жиров и углеводов для поддержания здоровья и достижения результатов.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="w-100 d-flex justify-content-end mt-4 mb-2 pe-5">
-                        <button type="button" class="btn btn-primary btn-order mt-4 mb-2 fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse2">Заказать</button>
-                    </div>
-                    <div class="modal fade" id="staticBackdropCourse2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered text-dark">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Выбор метода оплаты</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="payment-form-course2" class="payment-form">
-                                        <div class="mb-3">
-                                            <label for="user-name-course2" class="form-label">Имя *</label>
-                                            <input type="text" class="form-control" id="user-name-course2" name="client_name" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="user-email-course2" class="form-label">Email *</label>
-                                            <input type="email" class="form-control" id="user-email-course2" name="client_email" required>
-                                        </div>
-                                        <p class="text-center">Сумма: <strong>20.00 USD</strong></p>
-                                    </form>
-                                    <div class="mb-3 d-flex align-items-center plata-container" id="plata-by-mono-2">
-                                        <h5 style="margin-right: 50px;">
-                                            Онлайн-оплата картой
-                                        </h5>
-                                        <img src="./images/plata.png" height="auto" width="40%" alt="Plata by mono">
-                                    </div>
-                                    <div id="payoneer-checkout-2"></div>
-                                    <h5 class="text-center mb-3">Реквизиты</h5>
-                                    <p class="">Приватбанк: 1234 5678 9012 3456</p>
-                                    <p class="">Монобанк: 1234 5678 9012 3456</p> 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--3 Курс-->
         <section class="container-fluid pb-5 p-0 m-0 course-content" id="course-4">
-            <div class="row w-100 g-0">
+            <div class="row w-100 g-0 p-3 p-md-5">
                 <div class="col-md-5 col-lg-4 mb-5" id="course-4-img"></div>
                 <div class="col-md-7 col-lg-8 p-3 ps-lg-5 pe-lg-5 pt-md-5">
                     <h1 class="text-center pb-5">Программа на похудение/набор с акцентом на ягодицы</h1>
@@ -511,7 +390,7 @@
                     </div>
         
                     <div class="w-100 d-flex justify-content-end mt-4 mb-2 pe-5">
-                        <button type="button" class="btn btn-primary btn-order mt-4 mb-2 fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse4">Заказать</button>
+                        <button type="button" class="btn btn-primary btn-order mt-4 mb-2 fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse4">Приобрести</button>
                     </div>
                     <div class="modal fade" id="staticBackdropCourse4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered text-dark">
@@ -549,6 +428,136 @@
                             </div>
                         </div>
                     </div> 
+                </div>
+            </div>
+        </section>
+
+        <!--2 Курс-->
+        <section class="container-fluid p-0 m-0 course-content" id="course-2">
+            <div class="course-overlay-wrapper position-relative">
+                <div class="course-overlay">
+                    <div class="overlay-content text-center">
+                        <h2 class="coming-soon">Coming Soon</h2>
+                        <p class="countdown-timer" id="course-2-timer">10 days</p>
+                    </div>
+                </div>
+                <div class="row w-100 g-0 p-3 p-md-5">
+                    <div class="col-md-5 col-lg-4 mb-5" id="course-2-img"></div>
+                    <div class="col-md-7 col-lg-8 p-3 ps-lg-5 pe-lg-5 pt-md-5">
+                        <h1 class="text-center pb-5">Программа питания</h1>
+                    
+                        <div class="accordion" id="course2Accordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNutrition1">
+                                    <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition1" aria-expanded="false" aria-controls="collapseNutrition1">
+                                        <i class="fa-solid fa-plus fa-xl me-4"></i>
+                                        <p class="m-0 fs-4 text-start">Разнообразие рациона</p>
+                                    </button>
+                                </h2>
+                                <div id="collapseNutrition1" class="accordion-collapse collapse" aria-labelledby="headingNutrition1" data-bs-parent="#course2Accordion">
+                                    <div class="accordion-body">
+                                        Программа включает вкусное и сбалансированное меню на 4 недели, чтобы питание не было однообразным и скучным.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNutrition2">
+                                    <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition2" aria-expanded="false" aria-controls="collapseNutrition2">
+                                        <i class="fa-solid fa-plus fa-xl me-4"></i>
+                                        <p class="m-0 fs-4 text-start">Экономическая выгода</p>
+                                    </button>
+                                </h2>
+                                <div id="collapseNutrition2" class="accordion-collapse collapse" aria-labelledby="headingNutrition2" data-bs-parent="#course2Accordion">
+                                    <div class="accordion-body">
+                                        Вы получаете 5 рационов с разной калорийностью по цене одной программы, что позволяет легко выбрать оптимальный вариант под ваши цели.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNutrition3">
+                                    <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition3" aria-expanded="false" aria-controls="collapseNutrition3">
+                                        <i class="fa-solid fa-plus fa-xl me-4"></i>
+                                        <p class="m-0 fs-4 text-start">Удобство планирования</p>
+                                    </button>
+                                </h2>
+                                <div id="collapseNutrition3" class="accordion-collapse collapse" aria-labelledby="headingNutrition3" data-bs-parent="#course2Accordion">
+                                    <div class="accordion-body">
+                                        Каждую неделю вы получаете готовый список продуктов для закупки, что упрощает процесс и значительно экономит ваше время.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNutrition4">
+                                    <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition4" aria-expanded="false" aria-controls="collapseNutrition4">
+                                        <i class="fa-solid fa-plus fa-xl me-4"></i>
+                                        <p class="m-0 fs-4 text-start">Подробный расчет</p>
+                                    </button>
+                                </h2>
+                                <div id="collapseNutrition4" class="accordion-collapse collapse" aria-labelledby="headingNutrition4" data-bs-parent="#course2Accordion">
+                                    <div class="accordion-body">
+                                        В меню предоставляется подробный расчет калорийности, белков, жиров и углеводов для каждого приема пищи, что помогает точно следовать плану.
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNutrition5">
+                                    <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNutrition5" aria-expanded="false" aria-controls="collapseNutrition5">
+                                        <i class="fa-solid fa-plus fa-xl me-4"></i>
+                                        <p class="m-0 fs-4 text-start">Сбалансированное соотношение БЖУ</p>
+                                    </button>
+                                </h2>
+                                <div id="collapseNutrition5" class="accordion-collapse collapse" aria-labelledby="headingNutrition5" data-bs-parent="#course2Accordion">
+                                    <div class="accordion-body">
+                                        Программа разработана с учетом оптимального соотношения белков, жиров и углеводов для поддержания здоровья и достижения результатов.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="w-100 d-flex justify-content-end mt-4 mb-2 pe-5">
+                            <button type="button" class="btn btn-primary btn-order mt-4 mb-2 fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdropCourse2">Приобрести</button>
+                        </div>
+                        <div class="modal fade" id="staticBackdropCourse2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered text-dark">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Выбор метода оплаты</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="payment-form-course2" class="payment-form">
+                                            <div class="mb-3">
+                                                <label for="user-name-course2" class="form-label">Имя *</label>
+                                                <input type="text" class="form-control" id="user-name-course2" name="client_name" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="user-email-course2" class="form-label">Email *</label>
+                                                <input type="email" class="form-control" id="user-email-course2" name="client_email" required>
+                                            </div>
+                                            <p class="text-center">Сумма: <strong>20.00 USD</strong></p>
+                                        </form>
+                                        <div class="mb-3 d-flex align-items-center plata-container" id="plata-by-mono-2">
+                                            <h5 style="margin-right: 50px;">
+                                                Онлайн-оплата картой
+                                            </h5>
+                                            <img src="./images/plata.png" height="auto" width="40%" alt="Plata by mono">
+                                        </div>
+                                        <div id="payoneer-checkout-2"></div>
+                                        <h5 class="text-center mb-3">Реквизиты</h5>
+                                        <p class="">Приватбанк: 1234 5678 9012 3456</p>
+                                        <p class="">Монобанк: 1234 5678 9012 3456</p> 
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -619,7 +628,7 @@
                             <input class="form-control mb-3" type="text" placeholder="Имя" name="user_name" id="user_name">
                             <input class="form-control mb-3" type="text" placeholder="Контактная информация" name="user_email" id="user_email">
                             <textarea class="form-control mb-3" rows="10" cols="20" placeholder="Сообщение..." name="message" id="message"></textarea>
-                            <input class="form-control" type="submit" value="Отправить" id="btnSubmit" onclick="SendMessage()">
+                            <input class="form-control btn-order text-light rounded-pill w-100" type="submit" value="Отправить" id="btnSubmit" onclick="SendMessage()">
                         </form>
                     </div>
                 </div>
@@ -644,7 +653,7 @@
     </script>
     <!-- Здесь вставляем payoneerCheckout скрипт, когда он будет доступен -->
     <script src="https://checkout.payoneer.com/web/libraries/checkout-web/umd/checkout-web.min.js"></script>
-    <script src="./js/script.js?v=1.0.4"></script>
+    <script src="./js/script.js?v=1.0.5"></script>
     <script src="./js/payments.js?v=1.0.4"></script>
 </body>
 </html>
