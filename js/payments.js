@@ -165,4 +165,104 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Произошла ошибка при создании счета. Попробуйте позже.");
         }
     });
+
+    // PayPal - Course 1
+    paypal.Buttons({
+      style: {
+          layout: 'vertical',
+          color: 'blue',
+          shape: 'rect',
+          label: 'paypal'
+      },
+      fundingSource: paypal.FUNDING.PAYPAL,
+      createOrder: function (data, actions) {
+          if (!isFormValid('course1')) return null;
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: '10.00'
+                  },
+                  description: 'Ускоренная растяжка - онлайн курс'
+              }]
+          });
+      },
+      onApprove: function (data, actions) {
+          return actions.order.capture().then(function (details) {
+              showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
+              sendEmail('course1','Ускоренная растяжка', `10`, `PayPal`);
+          });
+      },
+      onError: function (err) {
+          console.error('Ошибка оплаты:', err);
+          if(!isFormValid('course1')) return;
+          showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
+      }
+    }).render('#paypal-button-container-course1');
+
+    // PayPal - Course 2
+    paypal.Buttons({
+      style: {
+          layout: 'vertical',
+          color: 'blue',
+          shape: 'rect',
+          label: 'paypal'
+      },
+      fundingSource: paypal.FUNDING.PAYPAL,
+      createOrder: function (data, actions) {
+          if (!isFormValid('course2')) return null;
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: '10.00'
+                  },
+                  description: 'Ускоренная растяжка - онлайн курс'
+              }]
+          });
+      },
+      onApprove: function (data, actions) {
+          return actions.order.capture().then(function (details) {
+              showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
+              sendEmail('course2','Ускоренная растяжка', `10`, `PayPal`);
+          });
+      },
+      onError: function (err) {
+          console.error('Ошибка оплаты:', err);
+          if(!isFormValid('course2')) return;
+          showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
+      }
+    }).render('#paypal-button-container-course2');
+
+
+    // PayPal - Course 3
+    paypal.Buttons({
+      style: {
+          layout: 'vertical',
+          color: 'blue',
+          shape: 'rect',
+          label: 'paypal'
+      },
+      fundingSource: paypal.FUNDING.PAYPAL,
+      createOrder: function (data, actions) {
+          if (!isFormValid('course3')) return null;
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: '10.00'
+                  },
+                  description: 'Ускоренная растяжка - онлайн курс'
+              }]
+          });
+      },
+      onApprove: function (data, actions) {
+          return actions.order.capture().then(function (details) {
+              showCustomAlert(`Оплата успешно завершена! Спасибо, ${details.payer.name.given_name}`, "success");
+              sendEmail('course3','Ускоренная растяжка', `10`, `PayPal`);
+          });
+      },
+      onError: function (err) {
+          console.error('Ошибка оплаты:', err);
+          if(!isFormValid('course3')) return;
+          showCustomAlert(`К сожалению, произошла ошибка при оплате. Попробуйте снова.`, "error");
+      }
+    }).render('#paypal-button-container-course3');
 });
