@@ -91,6 +91,7 @@
     <div id="custom-alert-container"></div>
     <header>
         <section class="container-fluid p-5" id="start-block">
+            <img src="./images/logo.jpg" alt="logo" height="80px" class="rounded-pill logo">
             <div class="language-switch-wrapper">
                 <a href="/ua/" class="language-switch">UA</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/" class="language-switch">RU</a>
             </div>
@@ -98,7 +99,7 @@
                 <div class="row justify-content-center align-items-center flex-grow-1">
                     <div class="col-12 text-center">
                         <h1>Анна Копцева</h1>
-                        <p class="mb-4">Ваш проводник в мир здоровья и гармонии</p>
+                        <p class="mb-4"> Ваш проводник в мир здоровья и гармонии</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -307,8 +308,7 @@
                                         <img src="./images/plata.png" height="auto" width="40%" alt="Plata by mono">
                                     </div>
                                     <div class="mb-3">
-                                        <div id="payoneer-checkout-1">
-                                        </div>
+                                        <div id="paypal-button-container-course1" class="paypal-button-container mb-2"></div>
                                     </div>
                                     <h5 class="text-center mb-3">Реквизиты</h5>
                                     <p class="">Приватбанк: 1234 5678 9012 3456</p>
@@ -417,7 +417,7 @@
                                         </h5>
                                         <img src="./images/plata.png" height="auto" width="40%" alt="Plata by mono">
                                     </div>
-                                    <div id="payoneer-checkout-4"></div>
+                                    <div id="paypal-button-container-course3" class="paypal-button-container mb-2"></div>
                                     <h5 class="text-center mb-3">Реквизиты</h5>
                                     <p class="">Приватбанк: 1234 5678 9012 3456</p>
                                     <p class="">Монобанк: 1234 5678 9012 3456</p> 
@@ -436,10 +436,27 @@
         <section class="container-fluid p-0 m-0 course-content" id="course-2">
             <div class="course-overlay-wrapper position-relative">
                 <div class="course-overlay">
-                    <div class="overlay-content text-center">
-                        <h2 class="coming-soon">Coming Soon</h2>
-                        <p class="countdown-timer" id="course-2-timer">10 days</p>
+                  <div class="overlay-content text-center">
+                    <h2 class="coming-soon">Coming Soon</h2>
+                    <div class="fancy-countdown">
+                      <div class="countdown-item">
+                        <span id="course-2-days" class="countdown-number">--</span>
+                        <span class="countdown-label">Days</span>
+                      </div>
+                      <div class="countdown-item">
+                        <span id="course-2-hours" class="countdown-number">--</span>
+                        <span class="countdown-label">Hours</span>
+                      </div>
+                      <div class="countdown-item">
+                        <span id="course-2-mins" class="countdown-number">--</span>
+                        <span class="countdown-label">Minutes</span>
+                      </div>
+                      <div class="countdown-item">
+                        <span id="course-2-secs" class="countdown-number">--</span>
+                        <span class="countdown-label">Seconds</span>
+                      </div>
                     </div>
+                  </div>
                 </div>
                 <div class="row w-100 g-0 p-3 p-md-5">
                     <div class="col-md-5 col-lg-4 mb-5" id="course-2-img"></div>
@@ -546,7 +563,7 @@
                                             </h5>
                                             <img src="./images/plata.png" height="auto" width="40%" alt="Plata by mono">
                                         </div>
-                                        <div id="payoneer-checkout-2"></div>
+                                        <div id="paypal-button-container-course2" class="paypal-button-container mb-2"></div>
                                         <h5 class="text-center mb-3">Реквизиты</h5>
                                         <p class="">Приватбанк: 1234 5678 9012 3456</p>
                                         <p class="">Монобанк: 1234 5678 9012 3456</p> 
@@ -655,5 +672,6 @@
     <script src="https://checkout.payoneer.com/web/libraries/checkout-web/umd/checkout-web.min.js"></script>
     <script src="./js/script.js?v=1.0.5"></script>
     <script src="./js/payments.js?v=1.0.4"></script>
+    <script src="https://www.sandbox.paypal.com/sdk/js?client-id=AfkHe-AhgHO-utwpYRcwFTyd4waxvge1RvFCyYpBY-mmMsZNKewZoRN9gCQCfjtOG8qSx0TyKK4iB0wV&currency=USD&components=buttons"></script>
 </body>
 </html>
