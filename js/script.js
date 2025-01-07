@@ -125,39 +125,55 @@ function redirectIfGermany() {
 
 document.addEventListener("DOMContentLoaded", function () {
   function BlurCourse() {
-      const courseWrapper = document.querySelector("#course-2 .course-overlay-wrapper");
-      const timerElement = document.getElementById("course-2-timer");
+    const courseWrapper = document.querySelector("#course-2 .course-overlay-wrapper");
+    // Элементы таймера
+    const daysEl = document.getElementById("course-2-days");
+    const hoursEl = document.getElementById("course-2-hours");
+    const minsEl = document.getElementById("course-2-mins");
+    const secsEl = document.getElementById("course-2-secs");
 
-      if (!courseWrapper || !timerElement) {
-          console.error("Elements not found: courseWrapper or timerElement");
-          return;
+    if (!courseWrapper || !daysEl || !hoursEl || !minsEl || !secsEl) {
+      console.error("Не найдены элементы для таймера");
+      return;
+    }
+
+    // Дата, когда курс станет доступен
+    const releaseDate = new Date("2025-01-30T00:00:00").getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = releaseDate - now;
+
+      // Если время вышло или дата уже наступила
+      if (distance <= 0) {
+        clearInterval(interval);
+        // Убираем размытие
+        courseWrapper.classList.remove("blurred");
+        // Прячем оверлей
+        const overlay = courseWrapper.querySelector(".course-overlay");
+        if (overlay) {
+          overlay.classList.add("d-none");
+        }
+      } else {
+        // Расчитываем дни, часы, минуты, секунды
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Заполняем элементы
+        daysEl.textContent = days;
+        hoursEl.textContent = hours < 10 ? "0" + hours : hours;
+        minsEl.textContent = minutes < 10 ? "0" + minutes : minutes;
+        secsEl.textContent = seconds < 10 ? "0" + seconds : seconds;
       }
+    }, 1000);
 
-      // Дата окончания курса
-      const releaseDate = new Date("2025-01-30").getTime();
-
-      // Обновление таймера каждую секунду
-      const interval = setInterval(() => {
-          const now = new Date().getTime();
-          const distance = releaseDate - now;
-
-          if (distance > 0) {
-              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-              timerElement.textContent = `${days} days`;
-          } else {
-              clearInterval(interval);
-              courseWrapper.classList.remove("blurred");
-              const overlay = courseWrapper.querySelector(".course-overlay");
-              if (overlay) {
-                  overlay.classList.add("d-none");
-              }
-          }
-      }, 1000);
-
-      // Включение эффекта затемнения
-      courseWrapper.classList.add("blurred");
+    // Включаем эффект размытия
+    courseWrapper.classList.add("blurred");
   }
 
+  // Запускаем функцию
   BlurCourse();
 });
 
