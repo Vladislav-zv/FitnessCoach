@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
-                    amount: 1,
+                    amount: 4240,
                     ccy: 980,
                     description: "Персональная программа для самостоятельной работы",
                     redirectUrl: window.location.origin + window.location.pathname + "?status=success1m"
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
-                    amount: 1,
+                    amount: 100,
                     ccy: 980,
                     description: "Программа питания",
                     redirectUrl: window.location.origin + window.location.pathname + "?status=success2m"
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
-                    amount: 1,
+                    amount: 2124,
                     ccy: 980,
                     description: "Программа на похудение/набор с акцентом на ягодицы",
                     redirectUrl: window.location.origin + window.location.pathname + "?status=success3m"
