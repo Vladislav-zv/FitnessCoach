@@ -35,7 +35,7 @@ function handleSuccess(courseId, courseName, amount, paymentMethod) {
     showCustomAlert(`Оплата успешно завершена! Ожидайте доступ к курсу`, "success");
     const userName = localStorage.getItem(`client_name_${courseId}`);
     const userEmail = localStorage.getItem(`client_email_${courseId}`);
-    const currentDate = new Date().toISOString().slice(0, 10);
+    const currentDate = new Date().toISOString();
 
     sendEmail(courseId, courseName, amount, paymentMethod)
       .then(function(response) {
