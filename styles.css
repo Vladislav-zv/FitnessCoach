@@ -446,6 +446,77 @@ h1{
     word-spacing: 10px;
 }
 
+/* Nav-tabs*/
+/* Контейнер */
+.nav-tabs {
+    border: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Кнопки */
+.nav-tabs .nav-link {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-weight: 500;
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+
+    transition: all 0.2s ease;
+}
+
+/* Hover (очень аккуратный) */
+.nav-tabs .nav-link:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Активная кнопка */
+.nav-tabs .nav-link.active {
+    color: #0b1a2b; /* под тёмно-синий фон */
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Убираем bootstrap underline */
+.nav-tabs .nav-link:focus {
+    outline: none;
+    box-shadow: none;
+}
+.nav-tabs .nav-link.active {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
+}
+
+.tab-content .tab-pane.show.active {
+    opacity: 1;
+}
+
+.tab-content .tab-pane {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.tab-content .tab-pane.fade.show {
+    opacity: 1;
+}
+
+/* Мобилка */
+@media (max-width: 576px) {
+    .nav-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-tabs .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+/**/
 
 /*Courses*/
 .btn-order {
