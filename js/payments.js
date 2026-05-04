@@ -3,7 +3,7 @@ const webAppUrl = 'https://script.google.com/macros/s/AKfycby7CJQznWvr_z1Wjf9X5D
 function sendEmail(courseId, courseName, _amount, paymentMethod) {
   const userName = localStorage.getItem(`client_name_${courseId}`);
   const userEmail = localStorage.getItem(`client_email_${courseId}`);
-  return emailjs.send("service_im88pwq", "template_8kdx3ee", {
+  return emailjs.send("service_im88pwq", /*"template_8kdx3ee"*/"template_uhek66n", {
     client_name: userName,
     client_email: userEmail,
     amount: `${_amount} $`,
@@ -61,13 +61,22 @@ function handleSuccess(courseId, courseName, amount, paymentMethod) {
 }
 
 if (window.location.search.includes("status=success1m")) {
-  handleSuccess('course1', 'Персональная программа для самостоятельной работы', `10`, 'Monobank');
+  handleSuccess('course1', 'Персональная программа с сопровождением', `300`, 'Monobank');
 }
 if (window.location.search.includes("status=success2m")) {
-  handleSuccess('course2', 'Программа питания', `20`, 'Monobank');
+  handleSuccess('course2', 'Персональная программа для самостоятельной работы', `100`, 'Monobank');
 }
 if (window.location.search.includes("status=success3m")) {
-  handleSuccess('course3', 'Программа на похудение/набор с акцентом на ягодицы', `30`, 'Monobank');
+  handleSuccess('course3', 'Программа тренировки для похудения', `50`, 'Monobank');
+}
+if (window.location.search.includes("status=success4m")) {
+  handleSuccess('course4', 'Программа тренировки для набора с акцентом на ягодицы', `50`, 'Monobank');
+}
+if (window.location.search.includes("status=success5m")) {
+  handleSuccess('course5', 'Программа питания для похудения', `50`, 'Monobank');
+}
+if (window.location.search.includes("status=success6m")) {
+  handleSuccess('course6', 'Программа питания для набора массы', `50`, 'Monobank');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
