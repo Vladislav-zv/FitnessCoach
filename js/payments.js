@@ -97,167 +97,361 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Обработчики для Monobank
-    //course 1_1
-    document.getElementById("plata-by-mono_1").addEventListener("click", async function () {
-        if (!isFormValid('course1')) return;
-        try {
-            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    amount: 15500,
-                    ccy: 980,
-                    description: "Персональная программа с сопровождением",
-                    redirectUrl: window.location.origin + window.location.pathname + "?status=success1m"
-                }),
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Не удалось создать счет");
-            }
+    //course 1
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_1") {
+            if (!isFormValid('course1')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 15500,
+                        ccy: 980,
+                        description: "Персональная программа с сопровождением",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success1m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
 
-            const { invoiceUrl } = await response.json();
-            window.location.href = invoiceUrl;
-        } catch (error) {
-            console.error("Ошибка при создании счета:", error.message);
-            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
+        }
+    });
+
+    //course 1_ua
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_1_ua") {
+            if (!isFormValid('course1_ua')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 15500,
+                        ccy: 980,
+                        description: "Персональная программа с сопровождением",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success1m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
         }
     });
 
     //course 1_2
-    document.getElementById("plata-by-mono_2").addEventListener("click", async function () {
-        if (!isFormValid('course2')) return;
-        try {
-            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    amount: 5200,
-                    ccy: 980,
-                    description: "Персональная программа для самостоятельной работы",
-                    redirectUrl: window.location.origin + window.location.pathname + "?status=success2m"
-                }),
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Не удалось создать счет");
-            }
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_2") {
+            if (!isFormValid('course2')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 5200,
+                        ccy: 980,
+                        description: "Персональная программа для самостоятельной работы",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success2m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
 
-            const { invoiceUrl } = await response.json();
-            window.location.href = invoiceUrl;
-        } catch (error) {
-            console.error("Ошибка при создании счета:", error.message);
-            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
         }
     });
 
-    document.getElementById("plata-by-mono_3").addEventListener("click", async function () {
-        if (!isFormValid('course3')) return;
-        try {
-            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    amount: 2600,
-                    ccy: 980,
-                    description: "Программа питания на похудение",
-                    redirectUrl: window.location.origin + window.location.pathname + "?status=success3m"
-                }),
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Не удалось создать счет");
-            }
+    //course 1_2_ua
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_2_ua") {
+            if (!isFormValid('course2_ua')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 5200,
+                        ccy: 980,
+                        description: "Персональная программа для самостоятельной работы",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success2m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
 
-            const { invoiceUrl } = await response.json();
-            window.location.href = invoiceUrl;
-        } catch (error) {
-            console.error("Ошибка при создании счета:", error.message);
-            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
         }
     });
 
-    document.getElementById("plata-by-mono_4").addEventListener("click", async function () {
-        if (!isFormValid('course4')) return;
-        try {
-            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    amount: 2600,
-                    ccy: 980,
-                    description: "Программа на набор с акцентом на ягодицы",
-                    redirectUrl: window.location.origin + window.location.pathname + "?status=success4m"
-                }),
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Не удалось создать счет");
-            }
+    //course 2
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_3") {
+            if (!isFormValid('course3')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа питания на похудение",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success3m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
 
-            const { invoiceUrl } = await response.json();
-            window.location.href = invoiceUrl;
-        } catch (error) {
-            console.error("Ошибка при создании счета:", error.message);
-            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
         }
     });
 
-        document.getElementById("plata-by-mono_5").addEventListener("click", async function () {
-        if (!isFormValid('course5')) return;
-        try {
-            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    amount: 2600,
-                    ccy: 980,
-                    description: "Программа питания на набор",
-                    redirectUrl: window.location.origin + window.location.pathname + "?status=success5m"
-                }),
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Не удалось создать счет");
-            }
+    //course 2_ua
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_3_ua") {
+            if (!isFormValid('course3_ua')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа питания на похудение",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success3m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
 
-            const { invoiceUrl } = await response.json();
-            window.location.href = invoiceUrl;
-        } catch (error) {
-            console.error("Ошибка при создании счета:", error.message);
-            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
         }
-
     });
-        document.getElementById("plata-by-mono_6").addEventListener("click", async function () {
-        if (!isFormValid('course6')) return;
-        try {
-            const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    amount: 2600,
-                    ccy: 980,
-                    description: "Программа питания на похудение",
-                    redirectUrl: window.location.origin + window.location.pathname + "?status=success6m"
-                }),
-            });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Не удалось создать счет");
-            }
 
-            const { invoiceUrl } = await response.json();
-            window.location.href = invoiceUrl;
-        } catch (error) {
-            console.error("Ошибка при создании счета:", error.message);
-            alert("Произошла ошибка при создании счета. Попробуйте позже.");
+    //course 2_2
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_4") {
+            if (!isFormValid('course4')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа на набор с акцентом на ягодицы",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success4m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
+        }
+    });
+
+    //course 2_2_ua
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_4_ua") {
+            if (!isFormValid('course4_ua')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа на набор с акцентом на ягодицы",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success4m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
+        }
+    });
+
+    //course 3
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_5") {
+            if (!isFormValid('course5')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа питания на набор",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success5m"
+                    }),
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
+        }
+    });
+
+    //course 3_ua
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_5_ua") {
+            if (!isFormValid('course5_ua')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа питания на набор",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success5m"
+                    }),
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
+        }
+    });
+
+    //course 3_2
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_6") {
+            if (!isFormValid('course6')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа питания на похудение",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success6m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
+        }
+    });
+
+    //course 3_2_ua
+    document.addEventListener("click", async function (event) {
+        if (event.target && event.target.id === "plata-by-mono_6_ua") {
+            if (!isFormValid('course6_ua')) return;
+            try {
+                const response = await fetch("https://monobank-5mve5st3a-ivans-projects-311967c8.vercel.app/api/monobank.js", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        amount: 2600,
+                        ccy: 980,
+                        description: "Программа питания на похудение",
+                        redirectUrl: window.location.origin + window.location.pathname + "?status=success6m"
+                    }),
+                });
+            
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || "Не удалось создать счет");
+                }
+
+                const { invoiceUrl } = await response.json();
+                window.location.href = invoiceUrl;
+            } catch (error) {
+                console.error("Ошибка при создании счета:", error.message);
+                alert("Произошла ошибка при создании счета. Попробуйте позже.");
+            }
         }
     });
 });
